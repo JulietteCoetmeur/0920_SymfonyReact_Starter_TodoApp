@@ -1,6 +1,6 @@
 
 // In this component we use Hook
-// When the page is call, useEffect call fetchTodo method to get Todos[] to do
+// When the page is call, useEffect call fetchTodo method to get Todos[] state
 // When data is loaded, we map on todos to display one todo at the time by the component TodoAlert
 // TodoAlert receive props object todo
 // In filter component I pass some props then It can call the methods : 
@@ -22,28 +22,28 @@ const Home = () => {
 
   const fetchTodos = async () => {
     const result = await axios(`/todo/`);
-    console.log('Home.jsx : L24 Result data from axios.get on url /todo/', result.data)
+    console.log('Home.jsx : L25 Result data from axios.get on url /todo/', result.data)
     setTodos(result.data);
     setIsLoading(false);
   };
 
   const fetchDone = async () => {
     const result = await axios(`/todo/done`);
-    console.log('Home.jsx : L31 Result data from axios.get on url /todo/done', result.data)
+    console.log('Home.jsx : L32 Result data from axios.get on url /todo/done', result.data)
     setTodos(result.data);
     setIsLoading(false);
   };
 
   const fetchAll = async () => {
     const result = await axios(`/todo/all`);
-    console.log('Home.jsx : L38 Result data from axios.get on url /todo/all', result.data)
+    console.log('Home.jsx : L39 Result data from axios.get on url /todo/all', result.data)
     setTodos(result.data);
     setIsLoading(false);
   };
 
   useEffect(() => {
     fetchTodos();
-    console.log('Home.jsx : L45 => useEffect has been used')
+    console.log('Home.jsx : L46 => useEffect has been used')
   }, []);
 
   return (
