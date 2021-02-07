@@ -1,6 +1,6 @@
 # [Symfony & React Starter App]
 
-## > ToStart TodoApp, clone this repo  
+### > To start TodoApp, clone this repo then follow instructions : 
 
 - ``` ➜ cd 0920_SymfonyReact_Starter_TodoApp ``` 
 - ``` ➜ code . ``` 
