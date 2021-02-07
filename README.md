@@ -59,20 +59,24 @@ Table `todo` was created with this attributes :
 
 
 #### > In this project :
-
-> /assets for React app <br>
-> /assets/index.js is the entry point
   
 > In src/controller/DefaultController <br> 
   index method return the default template view where React can take hand (`<div id="root"></div>`) for displaying front app to the client <br>
+
+> #### About REACT : 
+> /assets diresctory contain React app <br>
+> /assets/index.js is the entry point
   Take a look in /assets/index.js at L:11 : 
   <pre><code>
   ReactDOM.render([...],
     document.getElementById('root')
   );
 </code></pre>
-
-> Follow assets/App.jsx who imports ./components/Home.jsx who describes <br> method fetchTodos with axios gets data from url '/todo/' (L:11), <br> 
+> it's here where React communicate with the template from DefaultController.php
+> This connection is only here to take the hand on the front displaying
+> React is able to communicate with php controllers with Axios
+> <br>
+> Follow the code in assets/App.jsx who imports ./components/Home.jsx who describes <br> method fetchTodos with axios gets data from url '/todo/' (L:11), <br> 
   this is the route declared in our src/controller/TodoController.php index method qui returns json result from $todoRepository->findAll() at the L:30. <br> 
   After axios get response, Home.jsx loop on todos and inject todo in new component named TodoAlert.jsx. <br> 
   Read the code and try to understand how it works, follow the logic and bidouille 🔧 <br>
