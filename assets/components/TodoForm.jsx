@@ -128,7 +128,7 @@ const TodoForm = props => {
             ""
           )}
           <a href="/" className="mx-2">
-            <i className="fas fa-times"></i> Return
+            <i className="fas fa-times"></i> Cancel
           </a>
         </div>
       </div>

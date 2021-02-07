@@ -16,6 +16,10 @@ a:hover {
     color: #ff5722;
 }
 
+.inline-list li {
+    display: inline;
+}
+
 .btn-main {
     color: #fff;
     font-size: 22px;
@@ -53,6 +57,14 @@ a:hover {
 
 .btn-blue:hover {
     color: #111;
+}
+
+.btn-red {
+    color: #111;
+}
+
+.btn-red:hover {
+    color: #dd2c00;
 }
 
 .title-link {

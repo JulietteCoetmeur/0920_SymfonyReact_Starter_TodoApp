@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="container-fluid fixed-bottom bg-blue-dark pt-3">
       <div className="text-center">
-        <a href="/todos/add" className="btn btn-white animate__animated animate__slideInUp">
+        <a href="/todo/add" className="btn btn-white animate__animated animate__slideInUp">
           <i className="fas fa-plus-circle fa-3x"></i>
         </a>
       </div>
