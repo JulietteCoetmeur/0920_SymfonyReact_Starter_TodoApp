@@ -32,6 +32,10 @@ One table todo created with :
 
 
 ### TODO APP IS READY 🤌 
+<img src="public/screenshots/Home.png"
+     alt="List todo desktop view"
+     style="margin: auto;" />
+     
 ### TIME TO ADD YOUR FIRST TODO 📆
 ### [https://localhost:8000/todo/add](https://localhost:8000/todo/add)
 
@@ -81,7 +85,7 @@ One table todo created with :
   todo_is_done               PATCH      ANY      ANY    /todo/is-done/{id}
 ```
 
-#### Screenshots Mobile version :
+### Screenshots Mobile version :
 
 #### Todo list
 <img src="public/screenshots/ListTodo.png"
