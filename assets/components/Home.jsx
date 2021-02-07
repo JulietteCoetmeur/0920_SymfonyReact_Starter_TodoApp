@@ -4,10 +4,11 @@
 // When data is loaded, we map on todos to display one todo at the time by the component TodoAlert
 // TodoAlert receive props object todo
 // In filter component I pass some props then It can call the methods : 
-// fetchDone fetchAll & fetchTodo to refresh the contains of my state todos (L:19)
+// fetchDone fetchAll & fetchTodo to refresh the contains of my state todos (L:20)
 // There is some displaying condition as you can see, like for example we display 
-// "Everything is update, nothing to do !" if todos state is empty L:54 
-// Use the console on your browser to see console.log of the page
+// "Everything is update, nothing to do !" if todos state is empty L:55 
+// Use the console on your browser to see console.log of the page, 
+// try TodoList / DoneList / All links to see results change (your database has to contain some data to return something ;) )
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
