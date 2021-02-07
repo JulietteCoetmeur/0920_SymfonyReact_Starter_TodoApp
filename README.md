@@ -81,23 +81,34 @@ One table todo created with :
   todo_is_done               PATCH      ANY      ANY    /todo/is-done/{id}
 ```
 
-#### Screenshots :
+#### Screenshots Mobile version :
 
+#### Todo list
 <img src="public/screenshots/ListTodo.png"
      alt="List todo"
-     style="float: center;" />
+     style="margin: auto;" />
+
+#### Menu
 <img src="public/screenshots/Menu.png"
      alt="Menu todo"
-     style="float: center;" />
+     style="margin: auto;" />
+
+#### Create todo
 <img src="public/screenshots/CreateTodo.png"
      alt="Create todo"
-     style="float: center;" />
+     style="margin: auto;" />
+
+#### Edit todo
 <img src="public/screenshots/EditTodo.png"
      alt="Edit todo"
-     style="float: center;" />
+     style="margin: auto;" />
+
+#### Todo not done 
 <img src="public/screenshots/SeeTodoNotDone.png"
      alt="Todo not done"
-     style="float: center;" />
+     style="margin: auto;" />
+
+#### Todo done 
 <img src="public/screenshots/SeeTodoDone.png"
      alt="Todo done"
-     style="float: center;" />
+     style="margin: auto;" />
