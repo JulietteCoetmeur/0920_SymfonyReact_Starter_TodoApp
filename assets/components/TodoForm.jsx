@@ -9,7 +9,7 @@ const TodoForm = props => {
   const [todo, setTodo] = useState("");
 
   const fetchTodo = () => {
-    axios.get(`/todos/show/${props.match.params.id}`).then(response => {
+    axios.get(`/todo/show/${props.match.params.id}`).then(response => {
       if (response.data) {
         setTodo(response.data);
         setTitle(response.data.title);
@@ -33,18 +33,18 @@ const TodoForm = props => {
     };
     if (!props.match.params.id) {
       axios
-        .post("/todos/add", JSON.stringify(data))
+        .post("/todo/add", JSON.stringify(data))
         .then(() => props.history.push("/"));
     } else {
       axios
-        .post("/todos/edit/" + todo.id, JSON.stringify(data))
+        .post("/todo/edit/" + todo.id, JSON.stringify(data))
         .then(() => props.history.push("/"));
     }
   };
 
   const deleteTodo = () => {
     axios
-      .delete("/todos/delete/" + todo.id)
+      .delete("/todo/delete/" + todo.id)
       .then(() => props.history.push("/"));
   };
 

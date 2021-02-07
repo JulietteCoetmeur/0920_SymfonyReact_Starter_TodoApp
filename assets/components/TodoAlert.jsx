@@ -5,7 +5,7 @@ import axios from "axios";
 const TodoAlert = ({ todo }) => {
   const setIsDoneTodo = () => {
     axios
-      .patch("/todos/is-done/" + todo.id)
+      .patch("/todo/is-done/" + todo.id)
       .then(() => window.location.reload());
   };
 
@@ -18,7 +18,7 @@ const TodoAlert = ({ todo }) => {
             <span className="text-orange text-bold">{moment(todo.todoBefore).format("Do MMMM YYYY - hh:mm a")}</span>
           </p>
           <h2>
-            <a href={"/todo/show/" + todo.id} className="title-link">
+            <a href={"/todo/see/" + todo.id} className="title-link">
               | {todo.title}
             </a>
           </h2>
@@ -32,7 +32,7 @@ const TodoAlert = ({ todo }) => {
       <div className="float-end">
         <ul className="nav">
           <li className="nav-item">
-            <a href={"/todos/edit/" + todo.id} className="btn btn-sm btn-mint">
+            <a href={"/todo/edit/" + todo.id} className="btn btn-sm btn-mint">
               <i className="fas fa-pencil-alt fa-2x"></i>
             </a>
           </li>

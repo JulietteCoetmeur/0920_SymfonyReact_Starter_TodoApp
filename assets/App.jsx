@@ -11,9 +11,9 @@ return (
   <Router>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/todos/add" component={TodoForm} />
-      <Route exact path="/todos/edit/:id" component={TodoForm} />
-      <Route exact path="/todo/show/:id" component={Todo} />
+      <Route exact path="/todo/add" component={TodoForm} />
+      <Route exact path="/todo/edit/:id" component={TodoForm} />
+      <Route exact path="/todo/see/:id" component={Todo} />
     </Switch>
     <Footer />
   </Router>

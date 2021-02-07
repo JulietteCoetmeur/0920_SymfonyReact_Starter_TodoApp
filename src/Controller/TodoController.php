@@ -3,53 +3,84 @@
 namespace App\Controller;
 
 use App\Entity\Todo;
-use App\Form\TodoType;
 use App\Repository\TodoRepository;
+use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/todo")
+ * @Route("/todo", name="todos_")
  */
 class TodoController extends AbstractController
 {
-    /**
-     * @Route("/", name="todo_index", methods={"GET"})
-     */
-    public function index(TodoRepository $todoRepository): Response
+    private $todoRepository;
+
+    public function __construct(TodoRepository $todoRepository)
     {
-        return $this->render('todo/index.html.twig', [
-            'todos' => $todoRepository->findAll(),
-        ]);
+        $this->todoRepository = $todoRepository;
     }
 
     /**
-     * @Route("/new", name="todo_new", methods={"GET","POST"})
+     * @Route("/", name="todo", methods={"GET"})
      */
-    public function new(Request $request): Response
+    public function index(): Response
     {
-        $todo = new Todo();
-        $form = $this->createForm(TodoType::class, $todo);
-        $form->handleRequest($request);
+        return $this->json($this->todoRepository->findToDo());
+    }
 
-        if ($form->isSubmitted() && $form->isValid()) {
+    /**
+     * @Route("/done", name="done", methods={"GET"})
+     */
+    public function done(): Response
+    {
+        return $this->json($this->todoRepository->findDone());
+    }
+
+    /**
+     * @Route("/all", name="all", methods={"GET"})
+     */
+    public function all(): Response
+    {
+        return $this->json($this->todoRepository->findAll());
+    }
+
+    /**
+     * @Route("/add", name="add", methods={"GET","POST"})
+     */
+    public function add(Request $request): Response
+    {
+        if ($request->getMethod() === 'POST') {
+            $todo = new Todo();
+            $data = json_decode(
+                $request->getContent(),
+                true
+            );
+            $todo->setTitle($data['title']);
+            if (!empty($data['description'])) {
+                $todo->setDescription($data['description']);
+            }
+            $todo->setTodoBefore(new DateTime($data['before']));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($todo);
             $entityManager->flush();
 
-            return $this->redirectToRoute('todo_index');
+            return $this->json("Created todo id: " . $todo->getId(), 200);
         }
-
-        return $this->render('todo/new.html.twig', [
-            'todo' => $todo,
-            'form' => $form->createView(),
-        ]);
+        return $this->render('default/index.html.twig');
     }
 
     /**
-     * @Route("/show/{id}", name="todo_show", methods={"GET"})
+     * @Route("/show/{id}", name="show", methods={"GET"})
+     */
+    public function getTodo(Todo $todo): Response
+    {
+        return $this->json($todo, 200);
+    }
+
+     /**
+     * @Route("/see/{id}", name="todo_show", methods={"GET"})
      */
     public function show(Todo $todo): Response
     {
@@ -57,36 +88,50 @@ class TodoController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="todo_edit", methods={"GET","POST"})
+     * @Route("/edit/{id}", name="edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Todo $todo): Response
     {
-        $form = $this->createForm(TodoType::class, $todo);
-        $form->handleRequest($request);
+        if ($request->getMethod() === 'POST') {
+            $data = json_decode(
+                $request->getContent(),
+                true
+            );
+            $todo->setTitle($data['title']);
+            $todo->setDescription($data['description']);
+            $todo->setTodoBefore(new DateTime($data['before']));
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($todo);
+            $entityManager->flush();
 
-            return $this->redirectToRoute('todo_index');
+            return $this->json('Todo edited', 200);
         }
-
-        return $this->render('todo/edit.html.twig', [
-            'todo' => $todo,
-            'form' => $form->createView(),
-        ]);
+        return $this->render('default/index.html.twig');
     }
 
     /**
-     * @Route("/{id}", name="todo_delete", methods={"DELETE"})
+     * @Route("/delete/{id}", name="delete", methods={"DELETE"})
      */
     public function delete(Request $request, Todo $todo): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$todo->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($todo);
-            $entityManager->flush();
-        }
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($todo);
+        $entityManager->flush();
 
-        return $this->redirectToRoute('todo_index');
+        return $this->json('Todo deleted', 200);
+    }
+
+    /**
+     * @Route("/is-done/{id}", name="is_done", methods={"PATCH"})
+     */
+    public function isDone(Request $request, Todo $todo): Response
+    {
+        $todo->setIsDone(true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($todo);
+        $entityManager->flush();
+
+        return $this->json('Todo is set as done', 200);
     }
 }

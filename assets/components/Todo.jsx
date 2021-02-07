@@ -7,19 +7,19 @@ const Todo = props => {
 
   const setIsDoneTodo = () => {
     axios
-      .patch("/todos/is-done/" + todo.id)
+      .patch("/todo/is-done/" + todo.id)
       .then(() => window.location.reload());
   };
 
   const deleteTodo = () => {
     axios
-      .delete("/todos/delete/" + todo.id)
+      .delete("/todo/delete/" + todo.id)
       .then(() => props.history.push("/"));
   };
 
   const fetchTodo = () => {
     axios
-      .get(`/todos/show/${props.match.params.id}`)
+      .get(`/todo/show/${props.match.params.id}`)
       .then(response => setTodo(response.data));
   };
 
@@ -39,7 +39,7 @@ const Todo = props => {
         <h5>{todo.title}</h5>
         <p>{todo.description}</p>
         <div className="text-center">
-          <a href={"/todos/edit/" + todo.id} className="mx-2">
+          <a href={"/todo/edit/" + todo.id} className="mx-2">
             <i className="fas fa-pencil-alt"></i>
           </a>
           <a href="#" className="mx-2" onClick={setIsDoneTodo}>

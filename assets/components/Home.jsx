@@ -8,19 +8,19 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchTodos = async () => {
-    const result = await axios(`/todos/`);
+    const result = await axios(`/todo/`);
     setTodos(result.data);
     setIsLoading(false);
   };
 
   const fetchDone = async () => {
-    const result = await axios(`/todos/done`);
+    const result = await axios(`/todo/done`);
     setTodos(result.data);
     setIsLoading(false);
   };
 
   const fetchAll = async () => {
-    const result = await axios(`/todos/all`);
+    const result = await axios(`/todo/all`);
     setTodos(result.data);
     setIsLoading(false);
   };
