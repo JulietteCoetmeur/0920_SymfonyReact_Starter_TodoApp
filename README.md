@@ -3,6 +3,8 @@
 ## To start with TodoApp, clone this repo  
 
 - ``` ➜ cd 0920_SymfonyReact_Starter_TodoApp ``` 
+- ``` ➜ code . ``` 
+- Open terminal in VSCODE
 
 ### Database : 
 
