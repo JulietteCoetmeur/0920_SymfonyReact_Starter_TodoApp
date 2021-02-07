@@ -65,16 +65,17 @@ Table `todo` was created with this attributes :
 
 > #### About REACT : 
 > /assets diresctory contain React app <br>
-> /assets/index.js is the entry point
+> /assets/index.js is the entry point <br>
   Take a look in /assets/index.js at L:11 : 
   <pre><code>
   ReactDOM.render([...],
     document.getElementById('root')
   );
 </code></pre>
-> it's here where React communicate with the template from DefaultController.php
-> This connection is only here to take the hand on the front displaying
-> React is able to communicate with php controllers with Axios
+> It's here where React communicate with the template from DefaultController.php <br>
+> This connection is only here to take the hand on the front displaying <br>
+> I can use this template in an another route if I need it like for TodoController::add <br>
+> React is able to communicate with php controllers with Axios <br>
 > <br>
 > Follow the code in assets/App.jsx who imports ./components/Home.jsx who describes <br> method fetchTodos with axios gets data from url '/todo/' (L:11), <br> 
   this is the route declared in our src/controller/TodoController.php index method qui returns json result from $todoRepository->findAll() at the L:30. <br> 
