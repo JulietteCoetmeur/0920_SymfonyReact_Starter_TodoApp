@@ -34,7 +34,7 @@ Create `.env.local` > `DATABASE_URL="mysql://user:password@127.0.0.1:3306/db-nam
 ### TodoApp is ready 🤌
 
 
-#### In this project >
+#### In this project :
 
 > /assets for React app <br>
 > /assets/index.js is the entry point
