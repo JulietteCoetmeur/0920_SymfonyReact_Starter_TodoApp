@@ -20,3 +20,7 @@ return (
 )}
 
 export default App;
+
+// Here we are routing our React App
+// A path for a component 
+// Go to components/Home.jsx >>>

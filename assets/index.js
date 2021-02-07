@@ -10,3 +10,5 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById('root')
 );
+
+// HERE REACT TAKE THE HAND ON THE TEMPLATE default.html.twig and going to App.jsx >>>

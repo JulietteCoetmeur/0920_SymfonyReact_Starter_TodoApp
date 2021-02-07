@@ -22,6 +22,7 @@ class TodoController extends AbstractController
         $this->todoRepository = $todoRepository;
     }
 
+    // THIS IS A ROUTE FOR REACT AXIOS CALL
     /**
      * @Route("/", name="todo", methods={"GET"})
      */
@@ -30,6 +31,7 @@ class TodoController extends AbstractController
         return $this->json($this->todoRepository->findToDo());
     }
 
+    // THIS IS A ROUTE FOR REACT AXIOS CALL
     /**
      * @Route("/done", name="done", methods={"GET"})
      */
@@ -38,6 +40,7 @@ class TodoController extends AbstractController
         return $this->json($this->todoRepository->findDone());
     }
 
+    // THIS IS A ROUTE FOR REACT AXIOS CALL
     /**
      * @Route("/all", name="all", methods={"GET"})
      */
@@ -46,11 +49,13 @@ class TodoController extends AbstractController
         return $this->json($this->todoRepository->findAll());
     }
 
+    // THIS IS A ROUTE FOR REACT AXIOS POST REQUEST AND HANDLING FRONT VIEW BY REACT
     /**
      * @Route("/add", name="add", methods={"GET","POST"})
      */
     public function add(Request $request): Response
     {
+        // if the request is post then it come from Axios React Form Data (assets/components/TodoForm.jsx)
         if ($request->getMethod() === 'POST') {
             $todo = new Todo();
             $data = json_decode(
@@ -65,12 +70,14 @@ class TodoController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($todo);
             $entityManager->flush();
-
+            // When the form is submitted I return a json response to REACT
             return $this->json("Created todo id: " . $todo->getId(), 200);
         }
+        // need to take the hand on the displaying so i use the default template view with the div#root
         return $this->render('default/index.html.twig');
     }
 
+    // THIS IS A ROUTE FOR REACT AXIOS CALL
     /**
      * @Route("/data/{id}", name="data", methods={"GET"})
      */
@@ -79,6 +86,7 @@ class TodoController extends AbstractController
         return $this->json($todo, 200);
     }
 
+    // THIS IS A ROUTE FOR HANDLING FRONT VIEW BY REACT
      /**
      * @Route("/see/{id}", name="todo_show", methods={"GET"})
      */
@@ -87,6 +95,7 @@ class TodoController extends AbstractController
         return $this->render('default/index.html.twig');
     }
 
+    // THIS IS A ROUTE FOR REACT AXIOS POST REQUEST AND HANDLING FRONT VIEW BY REACT
     /**
      * @Route("/edit/{id}", name="edit", methods={"GET","POST"})
      */
@@ -110,6 +119,7 @@ class TodoController extends AbstractController
         return $this->render('default/index.html.twig');
     }
 
+    // THIS IS A ROUTE FOR REACT AXIOS CALL
     /**
      * @Route("/delete/{id}", name="delete", methods={"DELETE"})
      */
@@ -122,6 +132,7 @@ class TodoController extends AbstractController
         return $this->json('Todo deleted', 200);
     }
 
+    // THIS IS A ROUTE FOR REACT AXIOS CALL
     /**
      * @Route("/is-done/{id}", name="is_done", methods={"PATCH"})
      */
