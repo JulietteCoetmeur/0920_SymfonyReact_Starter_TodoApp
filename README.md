@@ -33,6 +33,15 @@ Create `.env.local` > `DATABASE_URL="mysql://user:password@127.0.0.1:3306/db-nam
 
 ### TodoApp is ready 🤌
 
+#### In this application you will be able to :
+- Create Todo with title description and datetime
+- Read a Todo
+- Update a Todo
+- Delete a Todo
+- List Todo by Datetime ASC not done
+- List Todo by Datetime ASC done
+- List All Todo by Datetime ASC 
+
 
 #### In this project :
 
@@ -69,12 +78,3 @@ Create `.env.local` > `DATABASE_URL="mysql://user:password@127.0.0.1:3306/db-nam
   todo_delete                DELETE     ANY      ANY    /todo/delete/{id}                  
   todo_is_done               PATCH      ANY      ANY    /todo/is-done/{id}
 ```
-
-#### In this application you will be able to :
-- Create Todo with title description and datetime
-- Read a Todo
-- Update a Todo
-- Delete a Todo
-- List Todo by Datetime ASC not done
-- List Todo by Datetime ASC done
-- List All Todo by Datetime ASC 
