@@ -54,7 +54,7 @@ Create `.env.local` > `DATABASE_URL="mysql://user:password@127.0.0.1:3306/db-nam
 > follow assets/App.jsx who imports ./components/Home.jsx who describes <br> method fetchTodos with axios gets data from url '/todo/' (L:11), <br> 
   this is the route declared in our src/controller/TodoController.php index method qui returns json result from $todoRepository->findAll() at the L:30. <br> 
   After axios get response, Home.jsx loop on todos and inject todo in new component named TodoAlert.jsx. <br> 
-  Read the code and try to understand how it works, follow the logic and bidouille 🔧𓀄 <br>
+  Read the code and try to understand how it works, follow the logic and bidouille 🔧 <br>
 
 > All routes availaible : ``` bin/console debug:router ```
 ```
