@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/todo", name="todos_")
+ * @Route("/todo", name="todo_")
  */
 class TodoController extends AbstractController
 {
@@ -72,7 +72,7 @@ class TodoController extends AbstractController
     }
 
     /**
-     * @Route("/show/{id}", name="show", methods={"GET"})
+     * @Route("/data/{id}", name="data", methods={"GET"})
      */
     public function getTodo(Todo $todo): Response
     {

@@ -19,7 +19,7 @@ const Todo = props => {
 
   const fetchTodo = () => {
     axios
-      .get(`/todo/show/${props.match.params.id}`)
+      .get(`/todo/data/${props.match.params.id}`)
       .then(response => setTodo(response.data));
   };
 
