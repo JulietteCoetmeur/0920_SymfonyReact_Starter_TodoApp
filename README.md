@@ -40,12 +40,21 @@ Create `.env.local` > `DATABASE_URL="mysql://user:password@127.0.0.1:3306/db-nam
 > /assets/index.js is the entry point
   
 > in src/controller/DefaultController <br> 
-  index method return the default template where React takes hand to display front app to client <br>
+  index method return the default template view where React can take hand (`<div id="root"></div>`) for displaying front app to the client <br>
+  Take a look in /assets/index.js at L:11 : 
+  <pre><code>
+  ReactDOM.render(
+    <React.StrictMode>
+    <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+</code></pre>
 
-> in assets/App.jsx import ./components/Home.jsx <br> 
-   method fetchTodos with axios gets data from url '/todo/' (L:11), this is the route declared in our src/controller/TodoController.php index method qui return json result from $todoRepository->findAll() at the L:30. <br> 
-   After axios get response, Home.jsx loop on todos and inject todo in new component named TodoAlert.jsx. <br> 
-   Read the code and try to understand how it works, follow the logic and bidouille 🔧𓀄 <br>
+> follow assets/App.jsx who imports ./components/Home.jsx who describes <br> method fetchTodos with axios gets data from url '/todo/' (L:11), <br> 
+  this is the route declared in our src/controller/TodoController.php index method qui returns json result from $todoRepository->findAll() at the L:30. <br> 
+  After axios get response, Home.jsx loop on todos and inject todo in new component named TodoAlert.jsx. <br> 
+  Read the code and try to understand how it works, follow the logic and bidouille 🔧𓀄 <br>
 
 > All routes availaible : ``` bin/console debug:router ```
 ```
