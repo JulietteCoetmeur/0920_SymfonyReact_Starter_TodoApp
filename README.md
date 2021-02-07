@@ -32,7 +32,7 @@ One table todo created with :
 
 
 ### TODO APP IS READY 🤌 
-### TIME TO ADD YOUR FIRST TODO 📆
+### TIME TO ADD YOUR FIRST TODO 📆 [I'm an inline-style link](https://localhost:8000/todo/add)
 
 #### In this application you will be able to :
 - Create Todo with title description and datetime
