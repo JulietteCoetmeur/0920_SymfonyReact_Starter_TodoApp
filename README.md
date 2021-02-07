@@ -1,12 +1,12 @@
 # Symfony & React Starter App
 
-## To start with TodoApp, clone this repo  
+## #To start with TodoApp, clone this repo  
 
 - ``` ➜ cd 0920_SymfonyReact_Starter_TodoApp ``` 
 - ``` ➜ code . ``` 
 - Open terminal in VSCODE
 
-### Database : 
+### #Database : 
 
 Create `.env.local` > `DATABASE_URL="mysql://user:password@127.0.0.1:3306/db-name?serverVersion=5.7"`
 
@@ -21,33 +21,33 @@ Table `todo` was created with this attributes :
 > todoBefore datetime NOT NULL <br> 
 > isDone boolean defaultValue=false <br>
 
-### Install Dependencies
+### #Install Dependencies
 - ``` composer install ```
 - ``` yarn install ```
 
-### Build React App :
+### #Build React App :
 - ``` yarn encore dev --watch ```
 
 
-### Start Symfony Server :
+### #Start Symfony Server :
 - ``` symfony server:start ```
 
 
-### TODO APP IS READY 🤌 
+### >TODO APP IS READY 🤌 
 <img src="public/screenshots/Home.png"
      alt="List todo desktop view"
      style="margin: auto;" />
 
 > [https://localhost:8000](https://localhost:8000)
 
-### TIME TO ADD YOUR FIRST TODO 📆
+### >TIME TO ADD YOUR FIRST TODO 📆
 <img src="public/screenshots/DesktopCreate.png"
      alt="Create todo desktop view"
      style="margin: auto;" />
 
 > [https://localhost:8000/todo/add](https://localhost:8000/todo/add)
 
-#### In this application you will be able to :
+#### #In this application you will be able to :
 - Create Todo with title description and datetime
 - Read a Todo
 - Update a Todo
@@ -57,7 +57,7 @@ Table `todo` was created with this attributes :
 - List All Todo by Datetime ASC 
 
 
-#### In this project :
+#### #In this project :
 
 > /assets for React app <br>
 > /assets/index.js is the entry point
@@ -93,34 +93,34 @@ Table `todo` was created with this attributes :
   todo_is_done               PATCH      ANY      ANY    /todo/is-done/{id}
 ```
 
-### Screenshots Mobile version :
+### #Screenshots Mobile version :
 
 #### Todo list
 <img src="public/screenshots/ListTodo.png"
      alt="List todo"
      style="margin: auto;" />
 
-#### Menu
+#### - Menu
 <img src="public/screenshots/Menu.png"
      alt="Menu todo"
      style="margin: auto;" />
 
-#### Create todo
+#### - Create todo
 <img src="public/screenshots/CreateTodo.png"
      alt="Create todo"
      style="margin: auto;" />
 
-#### Edit todo
+#### - Edit todo
 <img src="public/screenshots/EditTodo.png"
      alt="Edit todo"
      style="margin: auto;" />
 
-#### Todo not done 
+#### - Todo not done 
 <img src="public/screenshots/SeeTodoNotDone.png"
      alt="Todo not done"
      style="margin: auto;" />
 
-#### Todo done 
+#### - Todo done 
 <img src="public/screenshots/SeeTodoDone.png"
      alt="Todo done"
      style="margin: auto;" />
