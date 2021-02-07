@@ -35,9 +35,15 @@ One table todo created with :
 <img src="public/screenshots/Home.png"
      alt="List todo desktop view"
      style="margin: auto;" />
-     
+
+> [https://localhost:8000](https://localhost:8000)
+
 ### TIME TO ADD YOUR FIRST TODO 📆
-### [https://localhost:8000/todo/add](https://localhost:8000/todo/add)
+<img src="public/screenshots/DesktopCreate.png"
+     alt="Create todo desktop view"
+     style="margin: auto;" />
+
+> [https://localhost:8000/todo/add](https://localhost:8000/todo/add)
 
 #### In this application you will be able to :
 - Create Todo with title description and datetime
