@@ -1,12 +1,12 @@
-# Symfony & React Starter App
+# [Symfony & React Starter App]
 
-## #To start with TodoApp, clone this repo  
+## > ToStart TodoApp, clone this repo  
 
 - ``` ➜ cd 0920_SymfonyReact_Starter_TodoApp ``` 
 - ``` ➜ code . ``` 
 - Open terminal in VSCODE
 
-### #Database : 
+### > Database : 
 
 Create `.env.local` > `DATABASE_URL="mysql://user:password@127.0.0.1:3306/db-name?serverVersion=5.7"`
 
@@ -21,33 +21,33 @@ Table `todo` was created with this attributes :
 > todoBefore datetime NOT NULL <br> 
 > isDone boolean defaultValue=false <br>
 
-### #Install Dependencies
+### > Install Dependencies
 - ``` composer install ```
 - ``` yarn install ```
 
-### #Build React App :
+### > Build React App :
 - ``` yarn encore dev --watch ```
 
 
-### #Start Symfony Server :
+### > Start Symfony Server :
 - ``` symfony server:start ```
 
 
-### >TODO APP IS READY 🤌 
+### [TODO APP IS READY] 🤌 
 <img src="public/screenshots/Home.png"
      alt="List todo desktop view"
      style="margin: auto;" />
 
 > [https://localhost:8000](https://localhost:8000)
 
-### >TIME TO ADD YOUR FIRST TODO 📆
+### [TIME TO ADD YOUR FIRST TODO] 📆
 <img src="public/screenshots/DesktopCreate.png"
      alt="Create todo desktop view"
      style="margin: auto;" />
 
 > [https://localhost:8000/todo/add](https://localhost:8000/todo/add)
 
-#### #In this application you will be able to :
+#### > In this application you will be able to :
 - Create Todo with title description and datetime
 - Read a Todo
 - Update a Todo
@@ -57,24 +57,21 @@ Table `todo` was created with this attributes :
 - List All Todo by Datetime ASC 
 
 
-#### #In this project :
+#### > In this project :
 
 > /assets for React app <br>
 > /assets/index.js is the entry point
   
-> in src/controller/DefaultController <br> 
+> In src/controller/DefaultController <br> 
   index method return the default template view where React can take hand (`<div id="root"></div>`) for displaying front app to the client <br>
   Take a look in /assets/index.js at L:11 : 
   <pre><code>
-  ReactDOM.render(
-    <React.StrictMode>
-    <App />
-    </React.StrictMode>,
+  ReactDOM.render([...],
     document.getElementById('root')
   );
 </code></pre>
 
-> follow assets/App.jsx who imports ./components/Home.jsx who describes <br> method fetchTodos with axios gets data from url '/todo/' (L:11), <br> 
+> Follow assets/App.jsx who imports ./components/Home.jsx who describes <br> method fetchTodos with axios gets data from url '/todo/' (L:11), <br> 
   this is the route declared in our src/controller/TodoController.php index method qui returns json result from $todoRepository->findAll() at the L:30. <br> 
   After axios get response, Home.jsx loop on todos and inject todo in new component named TodoAlert.jsx. <br> 
   Read the code and try to understand how it works, follow the logic and bidouille 🔧 <br>
@@ -93,9 +90,9 @@ Table `todo` was created with this attributes :
   todo_is_done               PATCH      ANY      ANY    /todo/is-done/{id}
 ```
 
-### #Screenshots Mobile version :
+### > Screenshots Mobile version :
 
-#### Todo list
+#### - Todo list
 <img src="public/screenshots/ListTodo.png"
      alt="List todo"
      style="margin: auto;" />
