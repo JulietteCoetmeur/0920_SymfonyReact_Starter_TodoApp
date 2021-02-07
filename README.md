@@ -34,14 +34,14 @@ Table `todo` was created with this attributes :
 - ``` symfony server:start ```
 
 
-### [TODO APP IS READY] 🤌 
+### [MAMAMIAAA TODO APP IS READY 🤌]  
 <img src="public/screenshots/Home.png"
      alt="List todo desktop view"
      style="margin: auto;" />
 
 > [https://localhost:8000](https://localhost:8000)
 
-### [TIME TO ADD YOUR FIRST TODO] 📆
+### [TIME TO ADD YOUR FIRST TODO 📆]
 <img src="public/screenshots/DesktopCreate.png"
      alt="Create todo desktop view"
      style="margin: auto;" />
