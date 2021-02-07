@@ -6,18 +6,18 @@
 
 ### Database : 
 
-One table todo with 
-> id <br>
-> title string NOT NULL <br>
-> description text CAN BE NULL <br>
-> todoBefore datetime NOT NULL <br> 
-> isDone boolean defaultValue=false <br>
-
 Create `.env.local` > `DATABASE_URL="mysql://user:password@127.0.0.1:3306/db-name?serverVersion=5.7"`
 
 - ``` bin/console d:d:c ``` 
 - ``` bin/console make:migration ``` 
 - ``` bin/console doctrine:migration:migrate ``` 
+
+One table todo created with :
+> id <br>
+> title string NOT NULL <br>
+> description text CAN BE NULL <br>
+> todoBefore datetime NOT NULL <br> 
+> isDone boolean defaultValue=false <br>
 
 ### Dependencies
 - ``` composer install ```
