@@ -2,7 +2,7 @@
 
 ## To start with TodoApp, clone this repo  
 
-- ```➜ cd 0920_SymfonyReact_Starter_TodoApp``` 
+- ``` ➜ cd 0920_SymfonyReact_Starter_TodoApp ``` 
 
 ### Database : 
 
@@ -13,8 +13,8 @@ One table todo with
 > todoBefore datetime NOT NULL <br> 
 > isDone boolean defaultValue=false <br>
 
-- create `.env.local` > `DATABASE_URL="mysql://user:password@127.0.0.1:3306/db-name?serverVersion=5.7"`
-<br>
+Create `.env.local` > `DATABASE_URL="mysql://user:password@127.0.0.1:3306/db-name?serverVersion=5.7"`
+
 - ``` bin/console d:d:c ``` 
 - ``` bin/console make:migration ``` 
 - ``` bin/console doctrine:migration:migrate ``` 
