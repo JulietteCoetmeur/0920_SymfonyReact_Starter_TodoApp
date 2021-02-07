@@ -1,0 +1,140 @@
+body, .text-pop {
+    background-color: #00bcd4;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .title-rub, a {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+}
+
+a {
+    color: #111;
+}
+
+a:hover {
+    color: #ff5722;
+}
+
+.btn-main {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Rubik', sans-serif;
+    background-color: #222831;
+    border-color: #222831;
+}
+
+.btn-main:hover {
+    color: #fff;
+    background-color: #00bcd4;
+    border-color: #00bcd4;
+}
+
+.btn-white {
+    color: #fff;
+}
+
+.btn-white:hover {
+    color: #111;
+}
+
+.btn-mint {
+    color: #58CBAB;
+}
+
+.btn-mint:hover {
+    color: #111;
+}
+
+.btn-blue {
+    color: #00bcd4;
+}
+
+.btn-blue:hover {
+    color: #111;
+}
+
+.title-link {
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: #222831;
+}
+
+.sub-title {
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.text-bold {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.bg-blue-dark {
+    background-color: #00bcd4;
+}
+
+.bg-blue-light {
+    background-color: #b2ebf2;
+}
+
+.bg-orange {
+    background-color: #ff5722;
+}
+
+.bg-red {
+    background-color: #dd2c00;
+}
+
+.bg-mint {
+    background-color: #58CBAB;
+}
+
+.bg-dark {
+    background-color: #222831;
+}
+
+.text-blue-dark {
+    color: #00bcd4;
+}
+
+.text-blue-light {
+    color: #b2ebf2;
+}
+
+.text-orange {
+    color: #ff5722;
+}
+
+.text-red {
+    color: #dd2c00;
+}
+
+.text-mint {
+    color: #58CBAB;
+}
+
+.one-edge-shadow {
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.one-edge-shadow-light {
+    box-shadow: 0 8px 6px -6px #fff;
+}
+
+.space150 {
+    height: 150px;
+}
+
+.picker .react-datetime-picker__wrapper {
+    border: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .text-bold {
+        font-size: 18px;
+    }
+}
