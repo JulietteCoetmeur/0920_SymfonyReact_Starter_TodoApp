@@ -75,6 +75,12 @@ Table `todo` was created with this attributes :
 > This connection is only here to take the hand on the front displaying <br>
 > I can use this template in an another route if I need it like for TodoController::add <br>
 > React is able to communicate with php controllers with Axios <br>
+> React Components : 
+> - Home : get Todos and display list of TodoAlert
+> - TodoAlert : Is the template for one Todo in List 
+> - TodoForm : Is the form for create and update a Todo
+> - Todo : Is the template for the show one Todo view
+> - /uui/ Footer (contain the create link) & Filter contain the nav of link for TodoList, DoneList, All
 
 > Follow the code in assets/App.jsx who imports ./components/Home.jsx who describes method fetchTodos with axios gets data from url '/todo/' (L:24), this is the route declared in our src/controller/TodoController.php index method qui returns json result from $todoRepository->findAll() at the L:31. <br> 
   After axios get response, Home.jsx loop on todos and inject todo in new component named TodoAlert.jsx. <br> 
