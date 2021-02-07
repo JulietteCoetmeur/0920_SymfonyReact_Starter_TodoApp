@@ -60,10 +60,9 @@ Table `todo` was created with this attributes :
 
 #### > In this project :
   
-> In src/controller/DefaultController <br> 
-  index method return the default template view where React can take hand (`<div id="root"></div>`) for displaying front app to the client <br>
+> In src/controller/DefaultController, index method return the default template view where React can take hand (`<div id="root"></div>`) for displaying front app to the client
 
-> #### About REACT : 
+#### > About REACT : 
 > /assets diresctory contain React app <br>
 > /assets/index.js is the entry point <br>
   Take a look in /assets/index.js at L:11 : 
