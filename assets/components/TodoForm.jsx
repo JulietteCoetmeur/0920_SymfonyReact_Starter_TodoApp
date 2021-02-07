@@ -5,11 +5,11 @@ import DateTimePicker from "react-datetime-picker";
 const TodoForm = props => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [before, setBefore] = useState("");
+  const [before, setBefore] = useState(new Date());
   const [todo, setTodo] = useState("");
 
   const fetchTodo = () => {
-    axios.get(`/todo/show/${props.match.params.id}`).then(response => {
+    axios.get(`/todo/data/${props.match.params.id}`).then(response => {
       if (response.data) {
         setTodo(response.data);
         setTitle(response.data.title);
@@ -70,8 +70,7 @@ const TodoForm = props => {
         <div className="mb-3">
           <DateTimePicker
             format="dd-MM-y h:mm a"
-            aria-label
-            value={todo ? new Date(todo.todoBefore) : new Date()}
+            value={todo ? new Date(todo.todoBefore) : before}
             name="before"
             required
             onChange={before => setBefore(before)}
