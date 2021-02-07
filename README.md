@@ -80,3 +80,24 @@ One table todo created with :
   todo_delete                DELETE     ANY      ANY    /todo/delete/{id}                  
   todo_is_done               PATCH      ANY      ANY    /todo/is-done/{id}
 ```
+
+#### Screenshots :
+
+<img src="public/screenshots/ListTodo.png"
+     alt="List todo"
+     style="float: left; margin-right: 10px;" />
+<img src="public/screenshots/Menu.png"
+     alt="Menu todo"
+     style="float: left; margin-right: 10px;" />
+<img src="public/screenshots/CreateTodo.png"
+     alt="Create todo"
+     style="float: left; margin-right: 10px;" />
+<img src="public/screenshots/EditTodo.png"
+     alt="Edit todo"
+     style="float: left; margin-right: 10px;" />
+<img src="public/screenshots/SeeTodoNotDone.png"
+     alt="Todo not done"
+     style="float: left; margin-right: 10px;" />
+<img src="public/screenshots/SeeTodoDone.png"
+     alt="Todo done"
+     style="float: left; margin-right: 10px;" />
