@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DateTimePicker from "react-datetime-picker";
+import Error from "./uui/Error";
 
 const TodoForm = props => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [before, setBefore] = useState(new Date());
   const [todo, setTodo] = useState("");
+  const [error, setError] = useState("");
 
   const fetchTodo = () => {
     axios.get(`/todo/data/${props.match.params.id}`).then(response => {
@@ -26,39 +28,39 @@ const TodoForm = props => {
   }, []);
 
   const onSubmit = () => {
-    let data = {
-      title: title,
-      description: description,
-      before: before
-    };
-    if (!props.match.params.id) {
-      axios
-        .post("/todo/add", JSON.stringify(data))
-        .then(() => props.history.push("/"));
+    if (title != "") {
+      let data = {
+        title: title,
+        description: description,
+        before: before
+      };
+      if (!props.match.params.id) {
+        axios
+          .post("/todo/add", JSON.stringify(data))
+          .then(() => props.history.push("/"));
+      } else {
+        axios
+          .post("/todo/edit/" + todo.id, JSON.stringify(data))
+          .then(() => props.history.push("/"));
+      }
     } else {
-      axios
-        .post("/todo/edit/" + todo.id, JSON.stringify(data))
-        .then(() => props.history.push("/"));
+      setError("Title can't be empty");
     }
   };
 
   const deleteTodo = () => {
-    axios
-      .delete("/todo/delete/" + todo.id)
-      .then(() => props.history.push("/"));
+    axios.delete("/todo/delete/" + todo.id).then(() => props.history.push("/"));
   };
 
   return (
     <div className="container mt-5">
       {todo ? (
-        <>
-          <div className="text-white text-bold bg-dark one-edge-shadow mb-3">
-            <h1 className="text-white">
-              <span className="text-orange">➜</span> {`Edit Task #`} {todo.id}{" "}
-              {`/>`}
-            </h1>
-          </div>
-        </>
+        <div className="text-white text-bold bg-dark one-edge-shadow mb-3">
+          <h1 className="text-white">
+            <span className="text-orange">➜</span> {`Edit Task #`} {todo.id}{" "}
+            {`/>`}
+          </h1>
+        </div>
       ) : (
         <div className="text-white text-bold bg-dark one-edge-shadow mb-3">
           <h1 className="text-white">
@@ -66,6 +68,9 @@ const TodoForm = props => {
           </h1>
         </div>
       )}
+      <div className="my-2">
+        {error ? <Error message={error} /> : ""}
+      </div>
       <div className="text-center">
         <div className="mb-3">
           <DateTimePicker
