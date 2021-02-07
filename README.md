@@ -14,7 +14,7 @@ Create `.env.local` > `DATABASE_URL="mysql://user:password@127.0.0.1:3306/db-nam
 - ``` bin/console make:migration ``` 
 - ``` bin/console doctrine:migration:migrate ``` 
 
-One table todo created with :
+Table `todo` was created with this attributes :
 > id <br>
 > title string NOT NULL <br>
 > description text CAN BE NULL <br>
