@@ -99,6 +99,15 @@ Table `todo` was created with this attributes :
   todo_delete                DELETE     ANY      ANY    /todo/delete/{id}                  
   todo_is_done               PATCH      ANY      ANY    /todo/is-done/{id}
 ```
+### > Some features to try to add : 
+- Status for Todo example toDo > doing > done : 
+  Create new table `status : 'id', 'status'` 
+  Make relation between Todo Entity and Status Entity => Many to One
+  React Side : add the possibility to change the status of the todo directly on the Home component
+  Tips : Create a new component / axios.patch on a status & an id 
+- Add Auth and User Account to handle Todo by User Account
+- Add the possibility to add a file or an image in a todo 
+- Your own idea is Welcome :) 
 
 ### > Screenshots Mobile version :
 
