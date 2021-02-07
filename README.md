@@ -1,7 +1,8 @@
 # [Symfony & React Starter App]
 
-### > To start TodoApp, clone this repo then follow instructions : 
+### > To start TodoApp, clone this repo somewhere on your computer : 
 
+- ``` ➜ git clone git@github.com:JennyViannay/0920_SymfonyReact_Starter_TodoApp.git ``` 
 - ``` ➜ cd 0920_SymfonyReact_Starter_TodoApp ``` 
 - ``` ➜ code . ``` 
 - Open terminal in VSCODE
