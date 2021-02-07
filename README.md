@@ -19,7 +19,7 @@ One table todo created with :
 > todoBefore datetime NOT NULL <br> 
 > isDone boolean defaultValue=false <br>
 
-### Dependencies
+### Install Dependencies
 - ``` composer install ```
 - ``` yarn install ```
 
@@ -27,11 +27,12 @@ One table todo created with :
 - ``` yarn encore dev --watch ```
 
 
-### Start Symfony :
+### Start Symfony Server :
 - ``` symfony server:start ```
 
 
-### TodoApp is ready 🤌
+### TODO APP IS READY 🤌 
+### TIME TO ADD YOUR FIRST TODO 📆
 
 #### In this application you will be able to :
 - Create Todo with title description and datetime
