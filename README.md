@@ -11,6 +11,7 @@
 
 Create `.env.local` > `DATABASE_URL="mysql://user:password@127.0.0.1:3306/db-name?serverVersion=5.7"`
 
+- ``` composer install ```
 - ``` bin/console d:d:c ``` 
 - ``` bin/console make:migration ``` 
 - ``` bin/console doctrine:migration:migrate ``` 
